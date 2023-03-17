@@ -1,0 +1,15 @@
+.center{
+   display: flex;
+   justify-content: center;
+   box-sizing: border-box;
+   border: 2px solid #95A0A7;
+   margin: 0 auto;
+   /* width: auto; */
+   border-radius: 10px;
+}
+.app {
+  text-align: center;
+}
+.txt{
+    text-decoration: none;
+}

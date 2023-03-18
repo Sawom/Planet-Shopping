@@ -114,7 +114,6 @@ const Shop = () => {
                                 <FontAwesomeIcon icon={faShoppingCart} ></FontAwesomeIcon>
                                 <span className='mx-2'> Review Order </span>
                             </Button>
-                            
                         </Link>
                     </Cart>
                     

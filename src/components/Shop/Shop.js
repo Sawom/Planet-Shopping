@@ -2,13 +2,12 @@ import React, { useEffect, useState, Component } from 'react';
 import { Button, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useProducts from '../../hooks/useProducts';
-import { addToDb, getStoredCart } from '../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getStoredCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './Shop.css';
-import axios from 'axios';
 
 const Shop = () => {
     const  [products, setProducts  ] = useProducts();
@@ -47,8 +46,8 @@ const Shop = () => {
         else{
             getProducts();
         }
-    }
-    
+    } 
+    // end
     
     useEffect( () =>{
         const storedCart = getStoredCart();
@@ -82,7 +81,7 @@ const Shop = () => {
         setCart(newCart);
         addToDb(selectedProduct._id);
     }
-
+    
 
     return (
         <div className='container'>
@@ -104,17 +103,18 @@ const Shop = () => {
                             product={product}
                             handleAddToCart={handleAddToCart}
                             ></Product>)
-                            : <h3> No result Found</h3>
+                            : <h3> No Result Found</h3>
                     }
                 </Row>
                 {/* cart */}
                 <div className="part3">
-                    <Cart cart={cart}>
+                    <Cart  cart={cart}>
                         <Link to="/orders">
                             <Button size="sm">
                                 <FontAwesomeIcon icon={faShoppingCart} ></FontAwesomeIcon>
                                 <span className='mx-2'> Review Order </span>
                             </Button>
+                            
                         </Link>
                     </Cart>
                     

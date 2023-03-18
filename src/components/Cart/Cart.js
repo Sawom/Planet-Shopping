@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Cart.css';
 
 const Cart = (props) => {
-    const { cart } = props;
+    const { cart,  clearCart , children } = props;
     console.log(props.children);
     let total = 0;
     let shipping = 0;

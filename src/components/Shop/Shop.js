@@ -24,8 +24,32 @@ const Shop = () => {
         } )
     }, [])
 
+    // searching 
+    useEffect( ()=>{
+        getProducts();
+    } , [] );
+
+    const getProducts = async () =>{
+        let result = await fetch('http://localhost:5000/products');
+        result = await result.json();
+        setProducts(result);
+    }
+
+    const handleSearch = async (event)=>{
+        let key = event.target.value;
+        if(key){  
+            let result = await fetch(`http://localhost:5000/search/${key}`) ;
+            result = await result.json();
+            if(result){
+                setProducts(result)
+            }
+        } 
+        else{
+            getProducts();
+        }
+    }
     
-    // end
+    
     useEffect( () =>{
         const storedCart = getStoredCart();
         const savedCart = [];
@@ -62,16 +86,25 @@ const Shop = () => {
 
     return (
         <div className='container'>
-            <br /> <br />
+            <br />
+            {/* search */}
+            <div >
+                <br />
+                <input onChange={handleSearch} className='searchStyle App'  placeholder='Search Product Here' type="text"  ></input>
+                <br /> 
+            </div>
+             <br />
             {/* showing product */}
             <Row className='part1' xs={2} sm={2} md={2} lg={2} >
                 <Row className="part2 "  xs={1} sm={1} md={2} lg={3} >
                     {
+                        products.length > 0 ?
                         products.map(product=><Product 
                             key={product._id}
                             product={product}
                             handleAddToCart={handleAddToCart}
                             ></Product>)
+                            : <h3> No result Found</h3>
                     }
                 </Row>
                 {/* cart */}
@@ -87,7 +120,7 @@ const Shop = () => {
                     
                 </div>
             </Row>
-                
+              <br /><br /> <br />
         </div>
     );
 };

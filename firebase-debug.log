@@ -1,0 +1,44 @@
+[debug] [2023-03-19T11:26:53.121Z] ----------------------------------------------------------------------
+[debug] [2023-03-19T11:26:53.123Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-03-19T11:26:53.124Z] CLI Version:   11.24.1
+[debug] [2023-03-19T11:26:53.124Z] Platform:      win32
+[debug] [2023-03-19T11:26:53.124Z] Node Version:  v19.8.1
+[debug] [2023-03-19T11:26:53.124Z] Time:          Sun Mar 19 2023 17:26:53 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-03-19T11:26:53.124Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-19T11:26:53.191Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-19T11:26:53.191Z] > authorizing via signed-in user (19101008@uap-bd.edu)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\User
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-03-19T11:27:13.873Z] Using project from CLI flag: ecommerceapp-f7c88
+[debug] [2023-03-19T11:27:13.875Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ecommerceapp-f7c88 [none]
+[debug] [2023-03-19T11:27:14.612Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ecommerceapp-f7c88 200
+[debug] [2023-03-19T11:27:14.612Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ecommerceapp-f7c88 {"projectId":"ecommerceapp-f7c88","projectNumber":"155053083414","displayName":"ecommerceApp","name":"projects/ecommerceapp-f7c88","resources":{"hostingSite":"ecommerceapp-f7c88"},"state":"ACTIVE","etag":"1_eb86d88b-9d7e-4279-b7db-75eab3e9fd50"}
+[info] i  Using project ecommerceapp-f7c88 (ecommerceApp) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
